@@ -17,6 +17,7 @@ int delayTime = 280;
 int delayTime2 = 40;
 float offTime = 9680;
 
+// 아두이노 기본 9600 속도 셋팅 밎 센서 pin 설정
 void setup(){
   Serial.begin(9600);
   BTSerial.begin(9600);
@@ -25,6 +26,7 @@ void setup(){
 }
 
 void loop(){
+  // delay time과 delay time 2만큼의 시간동안 측정 그후 9600만큼 장치 딜레이
   digitalWrite(ledPower, LOW); // power on the LED
   delayMicroseconds(delayTime);
 
@@ -37,6 +39,8 @@ void loop(){
   delayMicroseconds(offTime);
   
   delay(1000);
+  
+  // 약 10번을 측정하여 평균값을 매긴후 블루투스 스트림에 써줌 그후 
   if(index == 10) {
     dustDensityug = dustDensityug/10;
     sumVoltage = sumVoltage/10;

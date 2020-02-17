@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main_Activity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--상단 레이어웃-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <FrameLayout
+                android:id="@+id/FF"
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/img_dustBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="matrix"
+                    android:src="@drawable/bg_grdt" />
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <FrameLayout
+                        android:layout_width="270dp"
+                        android:layout_height="220dp">
+                        <ImageView
+                            android:id="@+id/img_cloud"
+                            android:src="@drawable/cloud2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center">
+                            <TextView
+                                android:id="@+id/FineDustValueTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="77dp"
+                                android:text="00"
+                                android:textColor="#000000"
+                                android:textSize="66dp" />
+                            <com.example.myapplication.CustomTextView
+                                android:id="@+id/CustomTextView"
+                                android:singleLine="true"
+                                android:text="㎍/m³"
+                                android:textColor="#000000"
+                                android:textSize="15dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:textStroke="true"
+                                app:textStrokeColor="#ffffffff"
+                                app:textStrokeWidth="3.0"
+                                />
+                        </LinearLayout>
+                    </FrameLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/BluetoothStateTv"
+                            android:textColor="#ff0000"
+                            android:textSize="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="30dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
+                        <ImageView
+                            android:id="@+id/img_progress_2"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:src="@drawable/dust"
+                            android:visibility="invisible"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+                <ImageView
+                    android:layout_gravity="top|right"
+                    android:id="@+id/bluetooth_Icon"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:visibility="invisible"
+                    android:background="@drawable/bluetooth_icon" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!--하단 레이어웃-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center|top"
+            android:orientation="vertical">
+
+            <ImageView
+                android:background="@drawable/line2"
+                android:layout_width="match_parent"
+                android:layout_height="3dp" />
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginLeft="25dp"
+                    android:textColor="#000000"
+                    android:text="대기오염정보"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <Spinner
+                    android:id="@+id/spn_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:id="@+id/img_progress"
+                    android:src="@drawable/dust"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:layout_gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="오존 농도" />
+                    <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:layout_gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="미세 먼지" />
+                    <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:layout_gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="초미세먼지" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="5dp"
+                        android:id="@+id/tv_o3"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:text="0.000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="5dp"
+                        android:id="@+id/tv_pm10"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:text="0.000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="5dp"
+                        android:id="@+id/tv_pm25"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:text="0.000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:layout_gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="아황산가스" />
+                    <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:layout_gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="일산화탄소" />
+                    <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:layout_gravity="right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이산화질소" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="5dp"
+                        android:id="@+id/tv_so2"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:text="0.000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="5dp"
+                        android:id="@+id/tv_co"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:text="0.000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="5dp"
+                        android:id="@+id/tv_no2"
+                        android:textColor="#000000"
+                        android:textSize="20dp"
+                        android:text="0.000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/img_level1"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp" />
+                <TextView
+                    android:text="좋음"
+                    android:id="@+id/tv_color1"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#7AC1FD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/img_level2"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp" />
+                <TextView
+                    android:id="@+id/tv_color2"
+                    android:text="보통"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#26FF00"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/img_level3"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp" />
+                <TextView
+                    android:id="@+id/tv_color3"
+                    android:text="나쁨"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#FF784D"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/img_level4"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="5dp"
+                    android:layout_height="5dp" />
+                <TextView
+                    android:id="@+id/tv_color4"
+                    android:text="매우나쁨"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#FF0000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:gravity="right|center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_measureDust"
+                    android:background="@drawable/speech_bubble"
+                    android:layout_width="180dp"
+                    android:layout_height="100dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="20dp"
+                    android:paddingBottom="15dp"
+                    android:text="오늘도 미세먼지를\n측정해볼까"
+                    android:textColor="#000000"
+                    android:textAlignment="center"
+                    android:textSize="15dp"
+                     />
+                <ImageView
+                    android:id="@+id/img_dustMc"
+                    android:background="@drawable/dust_mc1"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="120dp"
+                    android:layout_height="100dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

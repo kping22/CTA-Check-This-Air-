@@ -36,3 +36,4 @@
 ## 구현 결과
 ### 아두이노
 1) 미세먼지 감지센서
+![4 27PPT1](https://user-images.githubusercontent.com/58617250/74647369-e375b680-51be-11ea-9384-a82f14d96d47.PNG)
